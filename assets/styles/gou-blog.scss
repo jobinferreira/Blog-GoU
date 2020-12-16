@@ -1,0 +1,120 @@
+$link-decoration: none !default;
+$breadcrumb-bg: white !default;
+$breadcrumb-divider: quote(">") !default;
+
+@import "theme.scss";
+@import "components.scss";
+
+$link-hover-color: $primary !default;
+$link-hover-decoration: null !default;
+
+$nav-link-hover-color: $primary !default;
+
+header {
+  background-color: $secondary;
+}
+.logo-gou {
+  height: 48px;
+}
+article {
+  a {
+    color: $secondary;
+  }
+  figure {
+    img {
+      transition: all 0.1s ease-out;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+aside {
+  figure {
+    height: 250px;
+  }
+}
+@media (max-width: 767px) {
+  .navbar {
+    transition: all 0.1s ease-out;
+  }
+  .navbar-toggler {
+    width: 40px;
+    height: 30px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.15s ease-in-out;
+    &:focus {
+      box-shadow: none;
+    }
+    &[aria-expanded="true"] {
+      span {
+        &:nth-child(1) {
+          top: 12px;
+          width: 0%;
+          left: 50%;
+        }
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+        &:nth-child(4) {
+          top: 12px;
+          width: 0%;
+          left: 50%;
+        }
+      }
+    }
+    span {
+      height: 4px;
+      width: 100%;
+      background: $white;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: 0.2s ease-in-out;
+      &:nth-child(1) {
+        top: 0px;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 12px;
+      }
+      &:nth-child(4) {
+        top: 26px;
+      }
+    }
+  }
+  .navbar-collapse {
+    background-color: $white;
+    box-shadow: 10px 0px 127px -11px rgba($black, 0.29);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 75vw !important;
+    padding: 3rem;
+    z-index: 500;
+    transition: all 0.2s ease;
+    &.collapsing {
+      height: 100vh !important;
+    }
+    &.show {
+      left: 0;
+    }
+    & > div {
+      margin: 5rem 0 !important;
+    }
+    .nav-link {
+      font-size: 1.3rem;
+    }
+  }
+  aside {
+    figure {
+      height: 180px;
+    }
+  }
+}

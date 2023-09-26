@@ -1,0 +1,507 @@
+//FORM
+label {
+  margin-bottom: 0.7rem;
+}
+.btn {
+  padding: 0.5rem 1.5rem;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: box-shadow, transform;
+}
+.btn.btn-sm {
+  font-size: 0.8rem;
+  padding: 0.35rem 1rem;
+}
+.btn:focus {
+  box-shadow: none !important;
+}
+.form-control {
+  border-radius: 10px;
+  height: 50px;
+  transition: all 0.5s, height 0.1s ease, background-image 0;
+  &:focus {
+    box-shadow: 0px 0px 33px 0px rgba($primary, 0.19);
+    transition: all 0.5s, height 0.2s ease, background-image 0;
+    color: $primary;
+    &::placeholder {
+      color: $primary;
+    }
+  }
+  &:disabled,
+  &[readonly] {
+    background-color: $light;
+  }
+}
+
+.form-control-xg {
+  font-size: 2rem;
+  font-weight: bold;
+  height: 40px;
+  padding: 1rem;
+}
+.invalid-feedback {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: $danger;
+  margin-top: 10px;
+  > div {
+    padding-left: 10px;
+  }
+}
+
+.form-control:invalid,
+.form-control.is-invalid {
+  color: $danger !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23dc3545' d='M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-36 344h12V232h-12c-6.627 0-12-5.373-12-12v-8c0-6.627 5.373-12 12-12h48c6.627 0 12 5.373 12 12v140h12c6.627 0 12 5.373 12 12v8c0 6.627-5.373 12-12 12h-72c-6.627 0-12-5.373-12-12v-8c0-6.627 5.373-12 12-12zm36-240c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32z'/%3E%3C/svg%3E") !important;
+  background-position: right calc(0.375em + 0.5rem) center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  border-color: $danger;
+  &:invalid::placeholder,
+  &.is-invalid::placeholder {
+    color: $danger;
+  }
+  &:focus {
+    box-shadow: 0px 0px 33px 0px rgba($danger, 0.19);
+    transition: all 0.5s background-image 0;
+    border-color: $danger;
+  }
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  &:not(.is-invalid) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M443.5 162.6l-7.1-7.1c-4.7-4.7-12.3-4.7-17 0L224 351 28.5 155.5c-4.7-4.7-12.3-4.7-17 0l-7.1 7.1c-4.7 4.7-4.7 12.3 0 17l211 211.1c4.7 4.7 12.3 4.7 17 0l211-211.1c4.8-4.7 4.8-12.3.1-17z'/%3E%3C/svg%3E");
+    background-position: right calc(0.375em + 0.5rem) center;
+    background-size: 12px;
+    background-repeat: no-repeat;
+  }
+}
+[type="date"] {
+  &:not(.is-invalid) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M400 64h-48V12c0-6.6-5.4-12-12-12h-8c-6.6 0-12 5.4-12 12v52H128V12c0-6.6-5.4-12-12-12h-8c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM48 96h352c8.8 0 16 7.2 16 16v48H32v-48c0-8.8 7.2-16 16-16zm352 384H48c-8.8 0-16-7.2-16-16V192h384v272c0 8.8-7.2 16-16 16zM148 320h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm96 0h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm96 0h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm-96 96h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm-96 0h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm192 0h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12z'/%3E%3C/svg%3E");
+    background-position: right calc(0.375em + 0.5rem) center;
+    background-size: 14px;
+    background-repeat: no-repeat;
+  }
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+}
+
+//TABLE
+.table {
+  &.table-round {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgba($black, 0.75), 0 14px 26px -12px rgba($dark, 0.2), 0 8px 10px -5px rgba($dark, 0.02);
+  }
+  th {
+    height: 60px;
+    vertical-align: middle !important;
+  }
+  th,
+  td {
+    padding: 1rem 1.2rem;
+    vertical-align: middle;
+  }
+}
+//ALERT
+.alert {
+  border: 0 none;
+  padding: 20px 15px;
+  border-radius: 0;
+  p {
+    font-size: 0.95rem;
+  }
+  &.border-left {
+    border-left-width: 3px !important;
+  }
+}
+.alert-primary {
+  background-color: rgba($primary, 0.06);
+  color: $primary;
+}
+.alert-secondary {
+  background-color: rgba($secondary, 0.06);
+  color: $secondary;
+}
+.alert-success {
+  background-color: rgba($success, 0.06);
+  color: $success;
+}
+.alert-danger {
+  background-color: rgba($danger, 0.06);
+  color: $danger;
+}
+.alert-warning {
+  background-color: rgba($warning, 0.06);
+  color: $warning;
+}
+.alert-info {
+  background-color: rgba($info, 0.06);
+  color: $info;
+}
+//BG
+.bg-primary-light {
+  background-color: rgba($primary, 0.06) !important;
+  color: $primary;
+  &.card {
+    border-color: rgba($primary, 0.3);
+    box-shadow: 0 14px 26px -12px rgba($primary, 0.2), 0 4px 23px 0 rgba(0, 0, 0, 0.012),
+      0 8px 10px -5px rgba($dark, 0.02);
+    .cut-text::before {
+      background-color: $primary;
+    }
+  }
+}
+.bg-secondary-light {
+  background-color: rgba($secondary, 0.06) !important;
+  color: $secondary;
+  &.card {
+    border-color: rgba($secondary, 0.3);
+    box-shadow: 0 14px 26px -12px rgba($secondary, 0.2), 0 4px 23px 0 rgba(0, 0, 0, 0.012),
+      0 8px 10px -5px rgba($dark, 0.02);
+    .cut-text::before {
+      background-color: $secondary;
+    }
+  }
+}
+.bg-success-light {
+  background-color: rgba($success, 0.1) !important;
+  color: $success;
+  &.card {
+    border-color: rgba($success, 0.3);
+    box-shadow: 0 14px 26px -12px rgba($success, 0.2), 0 4px 23px 0 rgba(0, 0, 0, 0.012),
+      0 8px 10px -5px rgba($dark, 0.02);
+    .cut-text::before {
+      background-color: $success;
+    }
+  }
+}
+.bg-danger-light {
+  background-color: rgba($danger, 0.06) !important;
+  color: $danger;
+  &.card {
+    border-color: rgba($danger, 0.3);
+    box-shadow: 0 14px 26px -12px rgba($danger, 0.2), 0 4px 23px 0 rgba(0, 0, 0, 0.012),
+      0 8px 10px -5px rgba($dark, 0.02);
+    .cut-text::before {
+      background-color: $danger;
+    }
+  }
+}
+.bg-warning-light {
+  background-color: rgba($warning, 0.06) !important;
+  color: $warning;
+  &.card {
+    border-color: rgba($warning, 0.3);
+    box-shadow: 0 14px 26px -12px rgba($warning, 0.23), 0 4px 23px 0 rgba(0, 0, 0, 0.012),
+      0 8px 10px -5px rgba($dark, 0.02);
+    .cut-text::before {
+      background-color: $warning;
+    }
+  }
+}
+//BADGE
+.badge {
+  padding: 0.6rem 0.98rem;
+}
+.badge-primary {
+  background-color: rgba($primary, 0.08) !important;
+  color: $primary;
+}
+.badge-secondary {
+  background-color: rgba($secondary, 0.08) !important;
+  color: $secondary;
+}
+.badge-success {
+  background-color: rgba($success, 0.15) !important;
+  color: $success;
+}
+.badge-danger {
+  background-color: rgba($danger, 0.08) !important;
+  color: $danger;
+}
+.badge-warning {
+  background-color: rgba($warning, 0.08) !important;
+  color: $warning;
+}
+.badge-info {
+  background-color: rgba($info, 0.08) !important;
+  color: $info;
+}
+.badge-dark {
+  background-color: rgba($dark, 0.08) !important;
+  color: $dark;
+}
+//TEXT
+.text-1x {
+  font-size: 1.2rem;
+}
+.text-2x {
+  font-size: 1.6rem;
+}
+.cut-text {
+  position: relative;
+  &::before {
+    content: " ";
+    height: 1px;
+    width: 120%;
+    background: $dark;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+//CLASS
+.box-shadow {
+  box-shadow: 0 14px 26px -12px rgba($dark, 0.5), 0 4px 23px 0 rgba(0, 0, 0, 0.012), 0 8px 10px -5px rgba($dark, 0.02) !important;
+}
+.pointer {
+  cursor: pointer;
+}
+.round-10 {
+  border-radius: 10px;
+}
+.round-15 {
+  border-radius: 15px;
+}
+.round-20 {
+  border-radius: 20px;
+}
+.round-30 {
+  border-radius: 30px;
+}
+.round-50 {
+  border-radius: 50px;
+}
+.zoom {
+  transform: scale(0.5);
+}
+//BUTTON
+.btn-primary {
+  box-shadow: 0 2px 2px 0 rgba($primary, 0.14), 0 3px 1px -2px rgba($primary, 0.2), 0 1px 5px 0 rgba($primary, 0.12);
+  &:hover {
+    box-shadow: 0 14px 26px -12px rgba($primary, 0.42), 0 4px 23px 0 rgba($primary, 0.12),
+      0 8px 10px -5px rgba($primary, 0.2);
+  }
+}
+.btn-secondary {
+  color: $white;
+  box-shadow: 0 2px 2px 0 rgba($secondary, 0.14), 0 3px 1px -2px rgba($secondary, 0.2),
+    0 1px 5px 0 rgba($secondary, 0.12);
+  &:hover {
+    box-shadow: 0 14px 26px -12px rgba($secondary, 0.42), 0 4px 23px 0 rgba($secondary, 0.12),
+      0 8px 10px -5px rgba($secondary, 0.2);
+  }
+}
+.btn-success {
+  box-shadow: 0 2px 2px 0 rgba($success, 0.14), 0 3px 1px -2px rgba($success, 0.2), 0 1px 5px 0 rgba($success, 0.12);
+  &:hover {
+    box-shadow: 0 14px 26px -12px rgba($success, 0.42), 0 4px 23px 0 rgba($success, 0.12),
+      0 8px 10px -5px rgba($success, 0.2);
+  }
+}
+.btn-danger {
+  box-shadow: 0 2px 2px 0 rgba($danger, 0.14), 0 3px 1px -2px rgba($danger, 0.2), 0 1px 5px 0 rgba($danger, 0.12);
+  &:hover {
+    box-shadow: 0 14px 26px -12px rgba($danger, 0.42), 0 4px 23px 0 rgba($danger, 0.12),
+      0 8px 10px -5px rgba($danger, 0.2);
+  }
+}
+.btn-warning {
+  box-shadow: 0 2px 2px 0 rgba($warning, 0.14), 0 3px 1px -2px rgba($warning, 0.2), 0 1px 5px 0 rgba($warning, 0.12);
+  &:hover {
+    box-shadow: 0 14px 26px -12px rgba($warning, 0.42), 0 4px 23px 0 rgba($warning, 0.12),
+      0 8px 10px -5px rgba($warning, 0.2);
+  }
+}
+.btn-info {
+  box-shadow: 0 2px 2px 0 rgba($info, 0.14), 0 3px 1px -2px rgba($info, 0.2), 0 1px 5px 0 rgba($info, 0.12);
+  &:hover {
+    box-shadow: 0 14px 26px -12px rgba($info, 0.42), 0 4px 23px 0 rgba($info, 0.12), 0 8px 10px -5px rgba($info, 0.2);
+  }
+}
+.btn-light {
+  box-shadow: 0 2px 2px 0 rgba($light, 0.14), 0 3px 1px -2px rgba($light, 0.2), 0 1px 5px 0 rgba($light, 0.12);
+  &:hover {
+    box-shadow: 0 14px 26px -12px rgba($dark, 0.02), 0 4px 23px 0 rgba($dark, 0.001), 0 8px 10px -5px rgba($dark, 0.2);
+  }
+}
+.btn-dark {
+  box-shadow: 0 2px 2px 0 rgba($dark, 0.14), 0 3px 1px -2px rgba($dark, 0.2), 0 1px 5px 0 rgba($dark, 0.12);
+  &:hover {
+    box-shadow: 0 14px 26px -12px rgba($dark, 0.42), 0 4px 23px 0 rgba($dark, 0.12), 0 8px 10px -5px rgba($dark, 0.2);
+  }
+}
+//RADIO
+$md-radio-checked-color: $primary;
+$md-radio-border-color: rgba(0, 0, 0, 0.54);
+$md-radio-size: 20px;
+$md-radio-checked-size: 10px;
+$md-radio-ripple-size: 15px;
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+  }
+  50% {
+    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0);
+  }
+}
+
+.md-radio {
+  margin: 10px 0;
+
+  &.md-radio-inline {
+    display: inline-block;
+  }
+
+  input[type="radio"] {
+    display: none;
+    &:checked + label:before {
+      border-color: $md-radio-checked-color;
+      animation: ripple 0.2s linear forwards;
+    }
+    &:checked + label:after {
+      transform: scale(1);
+    }
+  }
+
+  label {
+    display: inline-block;
+    min-height: $md-radio-size;
+    position: relative;
+    padding: 0 ($md-radio-size + 10px);
+    margin-bottom: 0;
+    cursor: pointer;
+    vertical-align: bottom;
+    line-height: 1.3;
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      transition-property: transform, border-color;
+    }
+    &:before {
+      left: 0;
+      top: 0;
+      width: $md-radio-size;
+      height: $md-radio-size;
+      border: 2px solid $md-radio-border-color;
+    }
+    &:after {
+      top: $md-radio-size / 2 - $md-radio-checked-size / 2;
+      left: $md-radio-size / 2 - $md-radio-checked-size / 2;
+      width: $md-radio-checked-size;
+      height: $md-radio-checked-size;
+      transform: scale(0);
+      background: $md-radio-checked-color;
+    }
+  }
+}
+
+//CHECKBOX
+$md-checkbox-checked-color: $primary;
+$md-checkbox-border-color: rgba(0, 0, 0, 0.54);
+$md-checkbox-border-color-disabled: rgba(0, 0, 0, 0.26);
+$md-checkbox-checked-color-disabled: rgba(0, 0, 0, 0.26);
+
+$md-checkbox-margin: 1em 0;
+$md-checkbox-size: 1.25em;
+$md-checkbox-padding: 0.25em;
+$md-checkbox-border-width: 2px;
+$md-checkbox-border-radius: 0.125em;
+$md-checkmark-width: 0.125em;
+$md-checkmark-color: $white;
+$md-checkbox-label-padding: 30px;
+
+.md-checkbox {
+  position: relative;
+  margin: $md-checkbox-margin;
+  text-align: left;
+
+  &.md-checkbox-inline {
+    display: inline-block;
+  }
+
+  label {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1.4;
+    vertical-align: tmiddle;
+    clear: both;
+    padding-left: 1px;
+    &:not(:empty) {
+      padding-left: $md-checkbox-label-padding;
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &:before {
+      // box
+      width: $md-checkbox-size;
+      height: $md-checkbox-size;
+      background: $white;
+      border: $md-checkbox-border-width solid $md-checkbox-border-color;
+      border-radius: $md-checkbox-border-radius;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+  }
+
+  input[type="checkbox"] {
+    outline: 0;
+    display: none;
+    width: $md-checkbox-size;
+    margin: 0;
+    float: left;
+    font-size: inherit;
+
+    &:checked {
+      + label:before {
+        background: $md-checkbox-checked-color;
+        border: none;
+      }
+      + label:after {
+        $md-checkmark-size: $md-checkbox-size - 2 * $md-checkbox-padding;
+
+        transform: translate($md-checkbox-padding, ($md-checkbox-size / 2) - ($md-checkmark-size / 2.6)) rotate(-45deg);
+        width: $md-checkmark-size;
+        height: $md-checkmark-size / 2;
+
+        border: $md-checkmark-width solid $md-checkmark-color;
+        border-top-style: none;
+        border-right-style: none;
+      }
+    }
+
+    &:disabled {
+      + label:before {
+        border-color: $md-checkbox-border-color-disabled;
+      }
+      &:checked {
+        + label:before {
+          background: $md-checkbox-checked-color-disabled;
+        }
+      }
+    }
+  }
+}
